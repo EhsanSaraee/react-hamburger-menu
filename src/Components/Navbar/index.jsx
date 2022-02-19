@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HamburgerMenu } from '../hamburgerMenu';
+import HamburgerMenu from '../HamburgerMenu';
 
 const NavbarContainer = styled.div`
    width: 100%;

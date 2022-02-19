@@ -1,6 +1,6 @@
 import './App.css';
 import styled from 'styled-components';
-import { Navbar } from './components/navbar';
+import Navbar from './Components/Navbar';
 
 const App = () => {
    return (
