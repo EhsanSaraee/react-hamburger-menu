@@ -1,10 +1,19 @@
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import styled from 'styled-components';
+import MenuToggle from './MenuToggle';
 
 const HamburgerMenu = () => {
+   const [isOpen, setIsOpen] = useState(false);
+
+   const toggleMenu = () => setIsOpen(!isOpen);
+
    return (
       <HamburgerMenuContainer>
-         <HamburgerIcon>Icon</HamburgerIcon>
-         <MenuContainer>Menu</MenuContainer>
+         <HamburgerIcon>
+            <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+         </HamburgerIcon>
+         <MenuContainer>Content</MenuContainer>
       </HamburgerMenuContainer>
    );
 };
@@ -20,7 +29,7 @@ const HamburgerIcon = styled.div`
    transition: all 250ms ease-in-out;
 `;
 
-const MenuContainer = styled.div`
+const MenuContainer = styled(motion.div)`
    min-width: 300px;
    width: 100%;
    height: 100%;
@@ -32,7 +41,7 @@ const MenuContainer = styled.div`
    top: 0;
    right: 0;
    user-select: none;
-   padding: 1rem 2.5rem;
+   padding: 1em 2.5em;
 `;
 
 export default HamburgerMenu;
