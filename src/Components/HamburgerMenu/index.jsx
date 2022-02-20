@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styled from 'styled-components';
 import MenuToggle from './MenuToggle';
+import NavMenu from './NavMenu';
 
 const menuVariants = {
    open: {
@@ -35,7 +36,7 @@ const HamburgerMenu = () => {
             variants={menuVariants}
             translate={menuTransition}
          >
-            Menu
+            <NavMenu isOpen={isOpen} />
          </MenuContainer>
       </HamburgerMenuContainer>
    );
