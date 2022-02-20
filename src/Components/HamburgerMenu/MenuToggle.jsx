@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const Path = (props) => {
-   return (
-      <motion.path
-         fill="transparent"
-         strokeLinecap="round"
-         strokeWidth="3"
-         {...props}
-      />
-   );
-};
+const Path = (props) => (
+   <motion.path
+      fill="transparent"
+      strokeLinecap="round"
+      strokeWidth="3"
+      {...props}
+   />
+);
 
 const transition = { duration: 0.3 };
 
@@ -22,8 +20,8 @@ const MenuToggle = ({ toggle, isOpen }) => {
                animate={isOpen ? 'open' : 'closed'}
                initial={false}
                variants={{
-                  closed: { d: 'M 2 2.5 L 20 2.5', stroke: 'hsl(0 0%, 100%)' },
-                  open: { d: 'M 3 16.5 L 17 2.5', stroke: 'hsl(0 0%, 18%)' },
+                  closed: { d: 'M 2 2.5 L 20 2.5', stroke: 'hsl(0, 0%, 100%)' },
+                  open: { d: 'M 3 16.5 L 17 2.5', stroke: 'hsl(0, 0%, 18%)' },
                }}
                transition={transition}
             />
@@ -44,9 +42,9 @@ const MenuToggle = ({ toggle, isOpen }) => {
                variants={{
                   closed: {
                      d: 'M 2 16.346 L 20 16.346',
-                     stroke: 'hsl(0 0%, 100%)',
+                     stroke: 'hsl(0, 0%, 100%)',
                   },
-                  open: { d: 'M 3 2.5 L 17 16.346', stroke: 'hsl(0 0%, 18%)' },
+                  open: { d: 'M 3 2.5 L 17 16.346', stroke: 'hsl(0, 0%, 18%)' },
                }}
                transition={transition}
             />
@@ -56,7 +54,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
 };
 
 const Button = styled.div`
-   z-index: 10;
+   z-index: 20;
    cursor: pointer;
 `;
 
