@@ -3,6 +3,22 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import MenuToggle from './MenuToggle';
 
+const menuVariants = {
+   open: {
+      transform: 'translateX(3%)',
+   },
+   closed: {
+      transform: 'translateX(103%)',
+   },
+};
+
+const menuTransition = {
+   type: 'spring',
+   duration: 1,
+   stiffness: 33,
+   delay: 0.1,
+};
+
 const HamburgerMenu = () => {
    const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +29,14 @@ const HamburgerMenu = () => {
          <HamburgerIcon>
             <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
          </HamburgerIcon>
-         <MenuContainer>Content</MenuContainer>
+         <MenuContainer
+            initial={false}
+            animate={isOpen ? 'open' : 'closed'}
+            variants={menuVariants}
+            translate={menuTransition}
+         >
+            Menu
+         </MenuContainer>
       </HamburgerMenuContainer>
    );
 };
@@ -37,6 +60,7 @@ const MenuContainer = styled(motion.div)`
    background: #fff;
    box-shadow: -2px 0 2px rgba(15, 15, 15, 0.3);
    z-index: 5;
+   transform: translateX(4em);
    position: fixed;
    top: 0;
    right: 0;
